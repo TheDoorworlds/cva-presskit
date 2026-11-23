@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[GAME TITLE] – Press Kit</title>
+  <meta name="description" content="Press kit for [GAME TITLE], a [GENRE] game by [STUDIO NAME].">
+
+  <!-- Social share preview (replace with your own image + URL) -->
+  <meta property="og:title" content="[GAME TITLE] – Press Kit">
+  <meta property="og:description" content="Logos, screenshots, trailer, and fact sheet for [GAME TITLE].">
+  <meta property="og:image" content="assets/key-art.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg: #0f1117;
+      --bg-alt: #161a23;
+      --text: #e8eaf0;
+      --muted: #9aa3b5;
+      --accent: #ff5e5b;        /* change this to match your game's brand */
+      --radius: 10px;
+      --max: 1000px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    section { padding: 64px 0; }
+    section:nth-of-type(even) { background: var(--bg-alt); }
+    h1, h2, h3 { line-height: 1.2; }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 48px; height: 4px;
+      background: var(--accent);
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+    p + p { margin-top: 1em; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15,17,23,.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #232838;
+    }
+    nav .wrap { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: center; padding-top: 12px; padding-bottom: 12px; }
+    nav strong { margin-right: auto; }
+    nav a { text-decoration: none; color: var(--muted); font-size: .9rem; }
+    nav a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 96px 0 80px;
+      background:
+        linear-gradient(rgba(15,17,23,.65), rgba(15,17,23,.95)),
+        url("assets/key-art.jpg") center / cover no-repeat,
+        var(--bg-alt);
+    }
+    .hero .logo { max-width: 360px; margin: 0 auto 24px; min-height: 80px; }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+    .hero p { color: var(--muted); max-width: 600px; margin: 16px auto 0; font-size: 1.1rem; }
+    .btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 26px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: var(--radius);
+    }
+    .btn.secondary { background: transparent; border: 2px solid var(--accent); color: var(--accent); margin-left: 8px; }
+
+    /* Fact sheet */
+    .facts { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
+    .facts dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; }
+    .facts dt { color: var(--muted); font-weight: 600; }
+    .facts dd a { word-break: break-word; }
+    @media (max-width: 760px) { .facts { grid-template-columns: 1fr; } }
+
+    /* Features */
+    .features { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .features li { background: var(--bg-alt); padding: 20px; border-radius: var(--radius); border: 1px solid #232838; }
+    section:nth-of-type(even) .features li { background: var(--bg); }
+    .features h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--accent); }
+
+    /* Video */
+    .video { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; background: #000; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* Gallery / assets */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .gallery a, .gallery figure {
+      display: block;
+      background: #1e2330;
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 160px;
+      border: 1px solid #232838;
+    }
+    .gallery img { width: 100%; height: auto; }
+    .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .logos figure { padding: 20px; border-radius: var(--radius); text-align: center; border: 1px solid #232838; }
+    .logos .on-dark { background: #0a0a0a; }
+    .logos .on-light { background: #f4f4f4; color: #222; }
+    .logos figcaption { font-size: .8rem; margin-top: 10px; opacity: .7; }
+    .download-row { margin-top: 24px; }
+
+    /* Quotes / awards */
+    blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 4px 0 4px 18px;
+      margin-bottom: 22px;
+      font-size: 1.1rem;
+    }
+    blockquote cite { display: block; font-size: .9rem; color: var(--muted); margin-top: 4px; font-style: normal; }
+
+    /* Team */
+    .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .team h3 { font-size: 1.05rem; }
+    .team span { color: var(--muted); font-size: .9rem; }
+
+    /* Footer */
+    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid #232838; }
+    ul.plain { list-style: none; }
+    ul.plain li + li { margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <strong>[GAME TITLE]</strong>
+      <a href="#factsheet">Fact Sheet</a>
+      <a href="#description">Description</a>
+      <a href="#features">Features</a>
+      <a href="#trailer">Trailer</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#logos">Logos</a>
+      <a href="#praise">Praise</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <img class="logo" src="assets/logo-light.png" alt="[GAME TITLE] logo">
+      <h1>[GAME TITLE]</h1>
+      <p>[One-sentence pitch: what is your game and why is it exciting?]</p>
+      <a class="btn" href="#downloads">Download Press Kit</a>
+      <a class="btn secondary" href="https://store.steampowered.com/app/XXXXXX" target="_blank" rel="noopener">Wishlist on Steam</a>
+    </div>
+  </header>
+
+  <!-- FACT SHEET -->
+  <section id="factsheet">
+    <div class="wrap">
+      <h2>Fact Sheet</h2>
+      <div class="facts">
+        <dl>
+          <dt>Developer</dt>      <dd>[STUDIO NAME]</dd>
+          <dt>Based in</dt>       <dd>[City, Country]</dd>
+          <dt>Release date</dt>   <dd>[Month DD, YYYY]</dd>
+          <dt>Platforms</dt>      <dd>[PC (Steam), Switch, PS5, Xbox…]</dd>
+          <dt>Genre</dt>          <dd>[e.g. Roguelike, Platformer]</dd>
+          <dt>Price</dt>          <dd>[$XX.XX / €XX.XX]</dd>
+          <dt>Players</dt>        <dd>[Single-player / Co-op]</dd>
+          <dt>Website</dt>        <dd><a href="https://example.com">example.com</a></dd>
+        </dl>
+        <div>
+          <h3 style="margin-bottom:10px">Links</h3>
+          <ul class="plain">
+            <li><a href="https://store.steampowered.com/app/XXXXXX">Steam page</a></li>
+            <li><a href="https://x.com/yourhandle">X / Twitter</a></li>
+            <li><a href="https://discord.gg/yourinvite">Discord</a></li>
+            <li><a href="https://youtube.com/@yourchannel">YouTube</a></li>
+          </ul>
+          <h3 style="margin:24px 0 10px">System Requirements (minimum)</h3>
+          <ul class="plain">
+            <li><strong>OS:</strong> [Windows 10 64-bit]</li>
+            <li><strong>CPU:</strong> [Intel Core i5-4460 / AMD equivalent]</li>
+            <li><strong>RAM:</strong> [8 GB]</li>
+            <li><strong>GPU:</strong> [GTX 760 / equivalent]</li>
+            <li><strong>Storage:</strong> [5 GB]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section id="description">
+    <div class="wrap">
+      <h2>Description</h2>
+      <p><strong>Short:</strong> [One or two sentences. Press can paste this straight into an article.]</p>
+      <p><strong>Long:</strong> [Two to four paragraphs covering the premise, gameplay loop, setting, and what makes your game different. Write in third person so it can be quoted directly.]</p>
+      <p>[Optional: a short history of the project, such as how long it has been in development and what inspired it.]</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <h2>Key Features</h2>
+      <ul class="features">
+        <li><h3>[Feature One]</h3>[Short, concrete description.]</li>
+        <li><h3>[Feature Two]</h3>[Short, concrete description.]</li>
+        <li><h3>[Feature Three]</h3>[Short, concrete description.]</li>
+        <li><h3>[Feature Four]</h3>[Short, concrete description.]</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section id="trailer">
+    <div class="wrap">
+      <h2>Trailer</h2>
+      <div class="video">
+        <!-- Replace VIDEO_ID with your YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="[GAME TITLE] trailer" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="download-row"><a href="https://youtube.com/watch?v=VIDEO_ID">Watch on YouTube</a> · <a href="assets/trailer.mp4" download>Download MP4</a></p>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section id="screenshots">
+    <div class="wrap">
+      <h2>Screenshots</h2>
+      <div class="gallery">
+        <!-- Click an image to open the full-size file. Add or remove as needed. -->
+        <a href="assets/screenshots/screenshot-01.png" target="_blank"><img src="assets/screenshots/screenshot-01.png" alt="[Describe screenshot 1]" loading="lazy"></a>
+        <a href="assets/screenshots/screenshot-02.png" target="_blank"><img src="assets/screenshots/screenshot-02.png" alt="[Describe screenshot 2]" loading="lazy"></a>
+        <a href="assets/screenshots/screenshot-03.png" target="_blank"><img src="assets/screenshots/screenshot-03.png" alt="[Describe screenshot 3]" loading="lazy"></a>
+        <a href="assets/screenshots/screenshot-04.png" target="_blank"><img src="assets/screenshots/screenshot-04.png" alt="[Describe screenshot 4]" loading="lazy"></a>
+        <a href="assets/screenshots/screenshot-05.png" target="_blank"><img src="assets/screenshots/screenshot-05.png" alt="[Describe screenshot 5]" loading="lazy"></a>
+        <a href="assets/screenshots/screenshot-06.png" target="_blank"><img src="assets/screenshots/screenshot-06.png" alt="[Describe screenshot 6]" loading="lazy"></a>
+      </div>
+      <p class="download-row"><a class="btn" href="assets/screenshots.zip" download>Download all screenshots (.zip)</a></p>
+    </div>
+  </section>
+
+  <!-- LOGOS & KEY ART -->
+  <section id="logos">
+    <div class="wrap">
+      <h2>Logos &amp; Key Art</h2>
+      <div class="logos">
+        <figure class="on-dark"><img src="assets/logo-light.png" alt="Logo, light version"><figcaption>Logo (for dark backgrounds)</figcaption></figure>
+        <figure class="on-light"><img src="assets/logo-dark.png" alt="Logo, dark version"><figcaption>Logo (for light backgrounds)</figcaption></figure>
+        <figure class="on-dark"><img src="assets/icon.png" alt="Game icon"><figcaption>Icon</figcaption></figure>
+        <figure class="on-dark"><img src="assets/key-art.jpg" alt="Key art"><figcaption>Key art</figcaption></figure>
+      </div>
+      <p class="download-row" id="downloads"><a class="btn" href="assets/press-kit.zip" download>Download full press kit (.zip)</a></p>
+    </div>
+  </section>
+
+  <!-- PRAISE -->
+  <section id="praise">
+    <div class="wrap">
+      <h2>Awards &amp; Praise</h2>
+      <blockquote>“[A short, glowing quote from a reviewer or player.]”<cite>— [Publication or Person]</cite></blockquote>
+      <blockquote>“[Another quote.]”<cite>— [Publication or Person]</cite></blockquote>
+      <p><strong>Awards / Nominations:</strong> [Festival, award name, year]</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="wrap">
+      <h2>About the Studio &amp; Team</h2>
+      <p>[Two or three sentences about [STUDIO NAME]: who you are, when you were founded, and what you care about making.]</p>
+      <div class="team" style="margin-top:28px">
+        <div><h3>[Name]</h3><span>[Role, e.g. Game Director]</span></div>
+        <div><h3>[Name]</h3><span>[Role, e.g. Lead Artist]</span></div>
+        <div><h3>[Name]</h3><span>[Role, e.g. Composer]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2>Press Contact</h2>
+      <p>Interested in a review key, interview, or more assets? Get in touch:</p>
+      <p><strong>[Contact Name]</strong><br>
+         <a href="mailto:press@example.com">press@example.com</a></p>
+      <p style="margin-top:1em;color:var(--muted);font-size:.9rem">Requesting review keys? Please include your outlet name, audience size, and preferred platform.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © [YEAR] [STUDIO NAME]. All rights reserved. [GAME TITLE] and its logos are trademarks of [STUDIO NAME].<br>
+      You may use the materials on this page to cover [GAME TITLE] in articles, videos, and streams.
+    </div>
+  </footer>
+
+</body>
+</html>
