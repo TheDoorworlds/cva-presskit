@@ -16,8 +16,8 @@
 
   <style>
     :root {
-      --bg: #0f1117;
-      --bg-alt: #161a23;
+      --bg: #23172d;
+      --bg-alt: #30223b;
       --text: #e8eaf0;
       --muted: #9aa3b5;
       --accent: #f248aa;        /* buttons, etc */
@@ -101,7 +101,7 @@
     @media (max-width: 760px) { .facts { grid-template-columns: 1fr; } }
 
     /* Features */
-    .features { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .features { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(300px, 1fr)); gap: 20px; }
     .features li { background: var(--bg-alt); padding: 20px; border-radius: var(--radius); border: 1px solid #232838; }
     section:nth-of-type(even) .features li { background: var(--bg); }
     .features h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--accent); }
@@ -215,11 +215,11 @@
   <section id="description">
     <div class="wrap">
       <h2>Description</h2>
-      <p><strong>Short:</strong>If Vampire Survivors and Stardew Valley had a weird, cat-filled baby, it would be Cats vs Aliens. Build, harvest, recruit, fight, and conquer The Planet in this bullet heaven meets cozy gaming title.</p>
-      <p><strong>Long:</strong>Welcome to The Planet, where cozy chaos is in full swing!  Cats vs. Aliens brings the addictive game loops of bullet heavens into cozy gaming.  Harvest diverse materials, build a cozy home base, recruit lovingly handcrafted characters (that you can play as), fend off waves of aliens in auto-fire combat, and use upgrades to find synergies that turn players into the most powerful feline The Planet has ever seen.
-Cats vs Aliens additionally features a unique Cozy Mode system that allows players to switch up the intensity at any moment of play.  This system allows players to dynamically choose their experience, allowing anything from the default, challenging experience to a very chill style of play where they become an immortal cat god!
+      <p><strong>Short:</strong><br />If Vampire Survivors and Stardew Valley had a weird, cat-filled baby, it would be Cats vs Aliens. Build, harvest, recruit, fight, and conquer The Planet in this bullet heaven meets cozy gaming title.
+      <p><strong>Long:</strong><br />Welcome to The Planet, where cozy chaos is in full swing!  Cats vs. Aliens brings the addictive game loops of bullet heavens into cozy gaming.  Harvest diverse materials, build a cozy home base, recruit lovingly handcrafted characters (that you can play as), fend off waves of aliens in auto-fire combat, and use upgrades to find synergies that turn players into the most powerful feline The Planet has ever seen.
+<p>Cats vs Aliens additionally features a unique Cozy Mode system that allows players to switch up the intensity at any moment of play.  This system allows players to dynamically choose their experience, allowing anything from the default, challenging experience to a very chill style of play where they become an immortal cat god!
 </p>
-      <p>[Optional: a short history of the project, such as how long it has been in development and what inspired it.]</p>
+      <p>This project has been in development for about 3 years, which would have been two had there not been a critical Steam-integration-related bug in builds made from Godot 3.5.x that necessitated an upgrade to Godot 4.x.  My goal with this game is to bring hte bullet heaven genre's tight game loops into the cozy gaming space.  I wanted to capture the essence of my favorite parts of games like Vampire Survivors, namely the upgrades and levelling system and resets between rounds, and combine that with a harvest/build/craft game loop from some of my favorite cozy titles.</p>
     </div>
   </section>
 
@@ -229,9 +229,9 @@ Cats vs Aliens additionally features a unique Cozy Mode system that allows playe
       <h2>Key Features</h2>
       <ul class="features">
         <li><h3>Gather, Harvest, Build</h3>Find diverse materials around The Planet, then use them to upgrade your base (and eventually, yourself)!</li>
-        <li><h3>Engage in Quests</h3>The sapient cat folk you find on The Planet will give you quests!  Complete them, and be rewarded.</li>
-        <li><h3>Cozy Mode</h3>Choose your intensity level!  Play with some challenge, or none at all, and change between them dynamically, whenever you want.</li>
+        <li><h3>Go On Quests</h3>The sapient cat folk you find on The Planet will give you quests!  Complete them, and be rewarded.</li>
         <li><h3>Recruit New Characters</h3>Find new characters to recruit to your cause, then play as them when they trust you enough!</li>
+        <li><h3>Get Cozy</h3>Choose your intensity level with Cozy Mode!  Play with some challenge, a smidgen of challenge, or none at all.  Change between modes dynamically, whenever you want to feel the exact type of cozy you need.</li>
       </ul>
     </div>
   </section>
@@ -254,12 +254,16 @@ Cats vs Aliens additionally features a unique Cozy Mode system that allows playe
       <h2>Screenshots</h2>
       <div class="gallery">
         <!-- Click an image to open the full-size file. Add or remove as needed. -->
-        <a href="assets/screenshots/screenshot-01.png" target="_blank"><img src="assets/screenshots/screenshot-01.png" alt="[Describe screenshot 1]" loading="lazy"></a>
-        <a href="assets/screenshots/screenshot-02.png" target="_blank"><img src="assets/screenshots/screenshot-02.png" alt="[Describe screenshot 2]" loading="lazy"></a>
-        <a href="assets/screenshots/screenshot-03.png" target="_blank"><img src="assets/screenshots/screenshot-03.png" alt="[Describe screenshot 3]" loading="lazy"></a>
-        <a href="assets/screenshots/screenshot-04.png" target="_blank"><img src="assets/screenshots/screenshot-04.png" alt="[Describe screenshot 4]" loading="lazy"></a>
-        <a href="assets/screenshots/screenshot-05.png" target="_blank"><img src="assets/screenshots/screenshot-05.png" alt="[Describe screenshot 5]" loading="lazy"></a>
-        <a href="assets/screenshots/screenshot-06.png" target="_blank"><img src="assets/screenshots/screenshot-06.png" alt="[Describe screenshot 6]" loading="lazy"></a>
+        <a href="assets/screenshots/BlackHole.png" target="_blank"><img src="assets/screenshots/BlackHole.png" alt="Kitsy Katsy encounters a strange black hole object in the world." loading="lazy"></a>
+        <a href="assets/screenshots/QuestPickup.png" target="_blank"><img src="assets/screenshots/QuestPickup.png" alt="Kitsy Katsy chatting with Purrlock.  The bottom panel shows the response options the player may choose from." loading="lazy"></a>
+        <a href="assets/screenshots/Harvest.png" target="_blank"><img src="assets/screenshots/Harvest.png" alt="Kitsy Katsy getting ready to harvest a tree." loading="lazy"></a>
+        <a href="assets/screenshots/LevelUp.png" target="_blank"><img src="assets/screenshots/LevelUp.png" alt="The upgrade choice screen that shows during level up." loading="lazy"></a>
+        <a href="assets/screenshots/Unlock.png" target="_blank"><img src="assets/screenshots/Unlock.png" alt="A popup notification showing rainbow rays coming from behind a panel announcing that the player has unlock Purrlock Holme's bed to build." loading="lazy"></a>
+        <a href="assets/screenshots/LootChest.png" target="_blank"><img src="assets/screenshots/LootChest.png" alt="A popup showing all of the loot the player received from finding and breaking open a loot chest." loading="lazy"></a>
+        <a href="assets/screenshots/BuildMenu.png" target="_blank"><img src="assets/screenshots/BuildMenu.png" alt="The Build Menu for the game, which the player unlocks by doing the first quests for Blutters." loading="lazy"></a>
+        <a href="assets/screenshots/CozyMode.png" target="_blank"><img src="assets/screenshots/CozyMode.png" alt="The Game Settings menu, featuring the Cozy Mode options." loading="lazy"></a>
+        <a href="assets/screenshots/DisplayOptions.png" target="_blank"><img src="assets/screenshots/DisplayOptions.png" alt="The Display Settings menu, showing the font scaling option." loading="lazy"></a>
+        
       </div>
       <p class="download-row"><a class="btn" href="assets/screenshots.zip" download>Download all screenshots (.zip)</a></p>
     </div>
